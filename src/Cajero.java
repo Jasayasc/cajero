@@ -3,9 +3,10 @@ public class Cajero {
     private int numeroCajero;
     private double monto;
 
-    public Cajero(String dir, int numeroCajero) {
+    public Cajero(String dir, int numeroCajero, double monto) {
         this.direccion = dir;
         this.numeroCajero = numeroCajero;
+        this.monto = monto;
     }
 
     public double getMonto() {
@@ -16,15 +17,14 @@ public class Cajero {
         this.monto = this.monto + montoAdicional;
     }
 
-    public boolean puedeRetirar(double montoRetirar){
-        if(montoRetirar > this.monto){
-            return false;
+    public boolean puedeRetirar(double montoRetirar) {
+        if (montoRetirar > this.monto) {
+            return true;
         }
-        return true;
+        return false;
     }
+
     public void retirar(double montoAdicional) {
         this.monto = this.monto - montoAdicional;
     }
-
-
 }
